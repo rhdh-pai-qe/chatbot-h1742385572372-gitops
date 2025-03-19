@@ -1,0 +1,19 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app.kubernetes.io/instance: chatbot-h1742385572372
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: chatbot-h1742385572372
+  name: chatbot-h1742385572372
+spec:
+  port:
+    targetPort: 8501
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: chatbot-h1742385572372
+    weight: 100
+  wildcardPolicy: None
